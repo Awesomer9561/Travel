@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Travel.Pages.Home"
+             xmlns:cities ="clr-namespace:Travel.Pages.Details_Page"
+            >
+    <NavigationPage Title="Vizag" IconImageSource="heart" >
+        <x:Arguments>
+            <cities:Vizag/>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Bengaluru" IconImageSource="heart" >
+        <x:Arguments>
+            <cities:Bengaluru/>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Kolkata" IconImageSource="heart" >
+        <x:Arguments>
+            <cities:Kolkata/>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Mumbai" IconImageSource="heart" >
+        <x:Arguments>
+            <cities:Mumbai/>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Shimla" IconImageSource="heart" >
+        <x:Arguments>
+            <cities:Shimla/>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Bengaluru" IconImageSource="heart" >
+        <x:Arguments>
+            <cities:Bengaluru/>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Kolkata" IconImageSource="heart" >
+        <x:Arguments>
+            <cities:Kolkata/>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Mumbai" IconImageSource="heart" >
+        <x:Arguments>
+            <cities:Mumbai/>
+        </x:Arguments>
+    </NavigationPage>
+</TabbedPage>

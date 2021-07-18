@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Travel.Pages.Details_Page.Bengaluru"
+             xmlns:toolkit="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:pancake ="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="toolkit:TabViewItem" x:Key="detailsTab">
+                <Setter Property="FontAttributesSelected" Value="Bold"/>
+                <Setter Property="TextColorSelected" Value="Black"/>
+                <Setter Property="FontSizeSelected" Value="15"/>
+                <Setter Property="FontSize" Value="13"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <!--Top view-->
+            <pancake:PancakeView HeightRequest="450" BackgroundColor="AntiqueWhite" 
+                                CornerRadius="0,0,0,70">
+                <StackLayout>
+                    <CarouselView x:Name="ImageCollectionCarousel">
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding .}" Aspect="AspectFill"/>
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+                </StackLayout>
+            </pancake:PancakeView>
+
+            <!--Location-->
+            <Grid ColumnDefinitions="auto,*" Margin="10,-70,10,0">
+                <Label Text="RK Beach" FontFamily="MReg" FontSize="20" TextColor="White"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Grid.Row="1">
+                    <Image Source="location" HeightRequest="20" HorizontalOptions="Start"/>
+                    <Label FontFamily="MMed" FontSize="15" VerticalOptions="Center" TextColor="White">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Visakhaptanam,   "/>
+                                <Span Text="Andhra Pradesh"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GotoLocaion"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <Image Source="heart" HeightRequest="35" Grid.RowSpan="2" Grid.Column="1"
+                       HorizontalOptions="Center" Margin="30,0,0,0"/>
+            </Grid>
+
+
+            <!--Details-->
+            <toolkit:TabView TabStripPlacement="Top" Margin="0,10,0,0"
+                             HeightRequest="200">
+                <!--OverView tab-->
+                <toolkit:TabViewItem Text="Overview"
+                                     Style="{StaticResource detailsTab}">
+                    <!--Ratings Tab-->
+                    <StackLayout Margin="20,10">
+                        <!--Star-->
+                        <Grid Margin="0,0,0,10">
+                            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                                <Image Source="star" HeightRequest="20"/>
+                                <Image Source="star" HeightRequest="20"/>
+                                <Image Source="star" HeightRequest="20"/>
+                                <Image Source="star" HeightRequest="20"/>
+                                <Image Source="starUnselected" HeightRequest="20"/>
+                            </StackLayout>
+                            <StackLayout Grid.Column="1" Orientation="Horizontal" HorizontalOptions="Start">
+                                <Label Text="4.4" FontSize="20" FontAttributes="Bold"/>
+                                <Label Text="2345  Reviews" FontSize="15" VerticalOptions="Center"
+                                       Margin="10,0"/>
+                            </StackLayout>
+                        </Grid>
+
+                        <!--Desc-->
+                        <StackLayout>
+                            <Label Text="Visakhapatnam, also commonly known as Vizag, is one of the oldest port cities in the country. Situated in the heart of Andhra Pradesh, Visakhapatnam is known for its picturesque beaches and serene landscape, as well as a rich cultural past. The port of Visakhapatnam is renowned for being home to the..."
+                                       FontSize="20" LineBreakMode="TailTruncation" MaxLines="7"/>
+                        </StackLayout>
+                    </StackLayout>
+                </toolkit:TabViewItem>
+                <!--Gallery tab-->
+                <toolkit:TabViewItem Text="Gallery" Style="{StaticResource detailsTab}">
+                    <!--Images-->
+                    <StackLayout>
+                        <Label Text="Nothting to show right now!" 
+                                   HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                </toolkit:TabViewItem>
+
+                <!--Review tab-->
+                <toolkit:TabViewItem Text="Reviews" Style="{StaticResource detailsTab}">
+                    <!--Reviews-->
+                    <StackLayout>
+                        <Label Text="Be the first one to post reviews!!" 
+                                   HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                </toolkit:TabViewItem>
+            </toolkit:TabView>
+
+
+            <pancake:PancakeView HeightRequest="50" Padding="0" Margin="0" 
+                                 BackgroundColor="WhiteSmoke" CornerRadius="35,35,0,0">
+                <Grid ColumnDefinitions="auto,auto,*" Margin="50,0">
+                    <Label FontSize="20" TextColor="Black" VerticalOptions="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="₹ "/>
+                                <Span Text="5,000"/>
+                                <Span Text=".00"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Text="(2 Days)" TextColor="Black" 
+                           Margin="5,0,0,0"
+                           Grid.Column="1" VerticalOptions="Center"/>
+                    <Frame BackgroundColor="DeepSkyBlue" CornerRadius="10" Padding="10" 
+                           HorizontalOptions="End" VerticalOptions="Center" Grid.Column="2">
+                        <Label Text="Visit Now" TextColor="White" TextTransform="Uppercase"/>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="GotoLocaion"/>
+                        </Frame.GestureRecognizers>
+                    </Frame>
+                </Grid>
+            </pancake:PancakeView>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

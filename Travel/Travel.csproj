@@ -1,0 +1,67 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Misc\Fonts\JuliusSansOne-Regular.ttf" />
+    <None Remove="Misc\Fonts\Montserrat-Light.ttf" />
+    <None Remove="Misc\Fonts\Montserrat-Medium.ttf" />
+    <None Remove="Misc\Fonts\Montserrat-Regular.ttf" />
+    <None Remove="Misc\Fonts\Montserrat-Thin.ttf" />
+    <None Remove="Misc\Fonts\MontserratAlternates-Light.ttf" />
+    <None Remove="Misc\Fonts\MontserratAlternates-Medium.ttf" />
+    <None Remove="Misc\Fonts\MontserratAlternates-Regular.ttf" />
+    <None Remove="Misc\Fonts\MontserratAlternates-Thin.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Misc\Fonts\JuliusSansOne-Regular.ttf" />
+    <EmbeddedResource Include="Misc\Fonts\Montserrat-Light.ttf" />
+    <EmbeddedResource Include="Misc\Fonts\Montserrat-Medium.ttf" />
+    <EmbeddedResource Include="Misc\Fonts\Montserrat-Regular.ttf" />
+    <EmbeddedResource Include="Misc\Fonts\Montserrat-Thin.ttf" />
+    <EmbeddedResource Include="Misc\Fonts\MontserratAlternates-Light.ttf" />
+    <EmbeddedResource Include="Misc\Fonts\MontserratAlternates-Medium.ttf" />
+    <EmbeddedResource Include="Misc\Fonts\MontserratAlternates-Regular.ttf" />
+    <EmbeddedResource Include="Misc\Fonts\MontserratAlternates-Thin.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.CommunityToolkit" Version="1.2.0" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+    <PackageReference Include="Xamarin.Forms.PancakeView" Version="2.3.0.759" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Pages\Details Page\Bengaluru.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Details Page\Kolkata.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Details Page\Mumbai.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Details Page\Shimla.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Details Page\Vizag.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Home.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Homepage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

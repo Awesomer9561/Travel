@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Travel.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="Cities">
+                <Grid>
+                    <Frame CornerRadius="30" Padding="0" Margin="20,10" HeightRequest="150">
+                        <Grid ColumnDefinitions="*,*">
+                            <Frame CornerRadius="30" Padding="0" Margin="0,0,0,0">
+                                <Image Source="Vizag" Aspect="Fill"/>
+                            </Frame>
+                            <!--Details-->
+                            <Grid Grid.Column="1" Margin="0,20">
+                                <Label Text="Visakhapatnam"/>
+                                <StackLayout Orientation="Horizontal" Grid.Row="1">
+                                    <Image Source="star" HeightRequest="20"/>
+                                    <Image Source="star" HeightRequest="20"/>
+                                    <Image Source="star" HeightRequest="20"/>
+                                    <Image Source="star" HeightRequest="20"/>
+                                    <Image Source="starUnselected" HeightRequest="20"/>
+                                </StackLayout>
+                                <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at porta dui, nec tristique ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi tempus accumsan nulla. Praesent nec blandit tellus, at scelerisque erat. Integer orci eros, sodales at felis vitae, egestas luctus lorem."
+                                                       HeightRequest="50" MaxLines="3" LineBreakMode="TailTruncation"
+                                                       Grid.Row="2"/>
+                            </Grid>
+                        </Grid>
+                    </Frame>
+                </Grid>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
